@@ -8,10 +8,10 @@ require('dotenv').config();
 const path = require("path");
 
 const {
-  DATABASE_URL = "postgresql://postgres@localhost/postgres",
+  DATABASE_URL = "postgresql://restresdb_ek79_user:4dWEd7gLHDZMNNcUmvjQsEdWegGa0nR0@dpg-cprjkddumphs73c6sdu0-a.ohio-postgres.render.com/restresdb_ek79?ssl=true",
   DATABASE_URL_DEVELOPMENT = "postgresql://restresdb_ek79_user:4dWEd7gLHDZMNNcUmvjQsEdWegGa0nR0@dpg-cprjkddumphs73c6sdu0-a.ohio-postgres.render.com/restresdb_ek79?ssl=true",
-  DATABASE_URL_TEST = "postgresql://postgres@localhost/postgres",
-  DATABASE_URL_PREVIEW = "postgresql://postgres@localhost/postgres",
+  DATABASE_URL_TEST = "postgresql://restresdb_ek79_user:4dWEd7gLHDZMNNcUmvjQsEdWegGa0nR0@dpg-cprjkddumphs73c6sdu0-a.ohio-postgres.render.com/restresdb_ek79?ssl=true",
+  DATABASE_URL_PREVIEW = "postgresql://restresdb_ek79_user:4dWEd7gLHDZMNNcUmvjQsEdWegGa0nR0@dpg-cprjkddumphs73c6sdu0-a.ohio-postgres.render.com/restresdb_ek79?ssl=true",
   DEBUG,
 } = process.env;
 
