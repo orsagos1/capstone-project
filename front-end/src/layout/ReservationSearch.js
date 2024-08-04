@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {listReservations} from "../utils/api";
 
-import ReservationDetail from "../reservations/ReservationDetail";
+import ReservationDetail from "./reservations/ReservationDetail";
 
 function ReservationSearch() {
     const [mobile_number, setMobile_number] = useState("");
