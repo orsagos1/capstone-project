@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { listReservations } from "../utils/api";
+import { listReservations, listTables } from "../utils/api";
 import { previous, next } from "../utils/date-time";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useLocation, useHistory } from "react-router-dom";
 import ReservationDetail from "../layout/reservations/ReservationDetail";
-
+import TableDetail from "../layout/tables/TableDetail";
 
 
 function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [currentDate, setCurrentDate] = useState(date);
 
+  const [tables, setTables] = useState([]);
   const [error, setError] = useState(null);
 
   const history = useHistory();
   const location = useLocation();
   const searchedDate = location.search.slice(-10);
+
+  // function to know when to toggle column with clear tables button
+
+function clearTables(tables) {
+  let result = [];
+  tables.forEach((table) => {
+    if (table.reservation_id) {
+      result.push(table);
+    }
+  })
+  return result;
+}
+let clearTableToggler = clearTables(tables);
+
+// useEffect to load reservations and tables
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -36,6 +52,21 @@ function Dashboard({ date }) {
     loadReservations();
     return () => abortController.abort();
   }, [date, currentDate, history.location])
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    async function loadTables() {
+      try {
+        const returnedTables = await listTables();
+        setTables(returnedTables);
+      } catch (error) {
+        setError(error);
+      }
+    }
+    loadTables();
+    return () => abortController.abort();
+  }, [history, date, currentDate])
 
   useEffect(() => {
     if (searchedDate && searchedDate !== "") {
@@ -72,7 +103,7 @@ function Dashboard({ date }) {
 
         <div className="d-md-flex mb-3">
           <div className="row mb-3">
-            <h4 className="mb-0">Reservations for date: {currentDate}</h4>
+            <h4 className="ml-3">Reservations for date: {currentDate}</h4>
             <div className="">
               <button className="btn btn-primary ml-3" onClick={previousHandler}> Previous Day </button>
             </div>
@@ -109,6 +140,30 @@ function Dashboard({ date }) {
             {reservations.map((reservation) => (
             <ReservationDetail reservation={reservation} key={reservation.reservation_id} />
             ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h4> Tables List</h4>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"> ID </th>
+                <th scope="col"> Table Name </th>
+                <th scope="col"> Capacity </th>
+                <th scope="col"> Reservation ID </th>
+                <th scope="col"> Table Status </th>
+                {clearTableToggler.length ?
+                  <th scope="col"> Clear Tables </th>
+                  :
+                  <></>}
+              </tr>
+            </thead>
+            <tbody>
+              {tables.map((table) => (
+                <TableDetail table={table} key={table.table_id} />
+              ))}
             </tbody>
           </table>
         </div>
