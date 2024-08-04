@@ -6,7 +6,6 @@ import ErrorAlert from "../ErrorAlert";
 
 
 
-
 function ReservationDetail({res}) {
     const [reservation, setReservation] = useState(res);
     const [error, setError] = useState(null);
@@ -41,6 +40,25 @@ function ReservationDetail({res}) {
                 <td> {reservation.reservation_date} </td>
                 <td> {reservation.reservation_time} </td>
                 <td data-reservation-id-status={reservation.reservation_id}> {reservation.status} </td>
+                <td>
+                    {reservation.status === "booked" ?
+                    <a
+                        href={`/reservations/${reservation.reservation_id}/seat`}>
+                        <button className="btn btn-primary"> Seat </button>
+                    </a>
+                    :
+                    <div></div>
+                    }
+                </td>
+                <td>
+                    {reservation.status === "booked" ?
+                    <a href={`/reservations/${reservation.reservation_id}/edit`}>
+                        <button className="btn btn-primary"> Edit </button>
+                    </a>
+                    :
+                    <></>
+                    }
+                </td>
                 <td data-reservation-id-cancel={reservation.reservation_id}>
                     {reservation.status === "booked" ?
                         <button className="btn btn-danger ml-2" onClick={handleCancelReservation}> Cancel </button>
@@ -51,6 +69,7 @@ function ReservationDetail({res}) {
             </tr>
         </>
     );
+    
 }
 
 export default ReservationDetail;
