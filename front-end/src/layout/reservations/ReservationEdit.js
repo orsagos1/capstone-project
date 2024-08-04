@@ -32,7 +32,7 @@ function ReservationEdit({ date }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         updateReservation({
-            ...currentReservaiton,
+            ...currentReservation,
             people: Number(currentReservation.people),
         })
         .then((response) => {
