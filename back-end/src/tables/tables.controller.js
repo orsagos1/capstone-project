@@ -1,5 +1,4 @@
 const service = require("./tables.service");
-const asyncBoundaryError = require("../errors/asyncErrorBoundary");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 
