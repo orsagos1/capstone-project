@@ -114,7 +114,7 @@ function tableOpen(req, res, next) {
     }
     next({
         status: 400,
-        message: `table_id ${table_id} is occupied`,
+        message: `table_id ${table.table_id} is occupied`,
     })
 }
 
