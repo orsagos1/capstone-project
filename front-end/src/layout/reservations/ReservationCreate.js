@@ -72,11 +72,11 @@ function ReservationCreate({ date }) {
                             required={true}
                             value={reservation.last_name}
                         />
-                        <small classNmae="form-text text-muted"> Enter Last Name </small>
+                        <small className="form-text text-muted"> Enter Last Name </small>
                     </div>
                 </div>
                 <div className="row mb-3">
-                    <div clasName="col-4 form-group">
+                    <div className="col-4 form-group">
                         <label className="form-label" htmlFor="mobile_number">
                             Mobile Number
                         </label>
@@ -123,7 +123,7 @@ function ReservationCreate({ date }) {
                             required={true}
                             value={reservation.reservation_date}
                         />
-                        <small className="form-text text-muted"> Etner Resrevation Date (Closed on Tuesdays) </small>
+                        <small className="form-text text-muted"> Enter Reservation Date (Closed on Tuesdays) </small>
                     </div>
                     <div className="col-4 form-group">
                         <label>
@@ -141,7 +141,7 @@ function ReservationCreate({ date }) {
                         <small className="form-text text-muted"> Enter Reservation Time </small>
                     </div>
                 </div>
-                <button type="button" onClick={() => history.goBack()} classNmae="btn btn-secondary mr-2"> Cancel </button>
+                <button type="button" onClick={() => history.goBack()} className="btn btn-secondary mr-2"> Cancel </button>
                 <button type="submit" className="btn btn-primary"> Submit Reservation </button>
             </form>
         </>
