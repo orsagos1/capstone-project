@@ -13,8 +13,8 @@ function listByDate(reservation_date) {
     return knex("reservations")
         .select("*")
         .where({ reservation_date })
-        .whereNot({ status: "finished" })
-        .andWhereNot({ status: "cancelled" })
+        .whereNot({status: "finished"})
+        .andWhereNot({status: "cancelled"})
         .orderBy("reservation_time")
 }
 
