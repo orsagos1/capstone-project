@@ -62,12 +62,12 @@ function hasTableCapacity(req, res, next) {
 
 function validTableCapacity(req, res, next) {
     const capacity = req.body.data.capacity;
-    if (capacity >= 1) {
+    if (capacity >= 1 && !capacity.length) {
         return next();
     }
     next({
         status: 400,
-        message: "Table must seat at least 1 person.",
+        message: "capacity",
     })
 }
 
@@ -134,7 +134,7 @@ async function hasEnoughSeats(req, res, next) {
     if (reservation.people > table.capacity) {
         next({
             status: 400,
-            messsage: "table capacity is smaller than reservation size",
+            message: "table capacity is smaller than reservation size",
         })
     }
     return next();
