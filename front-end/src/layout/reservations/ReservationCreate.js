@@ -35,7 +35,9 @@ function ReservationCreate({ date }) {
         .then(() => {
             history.push(`/dashboard?date=${reservation.reservation_date}`);
         })
-        .catch(setError);
+        .catch((error) => {
+                setError(error);
+            })
     }
 
     return (
@@ -141,7 +143,7 @@ function ReservationCreate({ date }) {
                         <small className="form-text text-muted"> Enter Reservation Time </small>
                     </div>
                 </div>
-                <button type="button" onClick={() => history.goBack()} className="btn btn-secondary mr-2"> Cancel </button>
+                <button type="button" onClick={() => history.push("/")} className="btn btn-secondary mr-2"> Cancel </button>
                 <button type="submit" className="btn btn-primary"> Submit Reservation </button>
             </form>
         </>
