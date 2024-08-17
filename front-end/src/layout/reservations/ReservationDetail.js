@@ -20,7 +20,9 @@ function ReservationDetail({res}) {
                 listTables()
                 history.push("/dashboard");
             })
-            .catch(setError)
+            .catch((error) => {
+                setError(error);
+            })
         }
     }
 
