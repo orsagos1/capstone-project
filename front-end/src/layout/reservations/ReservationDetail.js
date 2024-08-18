@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { updateReservationStatus, listTables } from "../../utils/api";
 import ErrorAlert from "../ErrorAlert";
@@ -6,8 +6,8 @@ import ErrorAlert from "../ErrorAlert";
 
 
 
-function ReservationDetail({res}) {
-    const [reservation, setReservation] = useState(res);
+function ReservationDetail({reservation}) {
+
     const [error, setError] = useState(null);
     const history = useHistory();
 
@@ -25,10 +25,6 @@ function ReservationDetail({res}) {
             })
         }
     }
-
-    useEffect(() => {
-        setReservation(reservation);
-    }, [reservation, history])
 
     return (
         <>
