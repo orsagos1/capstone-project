@@ -56,8 +56,8 @@ function ReservationSearch() {
                         <th scope="col"> Reservation Status </th>
                     </thead>
                     <tbody>
-                        {reservations.map((res) => (
-                            <ReservationDetail res={res} />
+                        {reservations.map((reservation) => (
+                            <ReservationDetail res={reservation} />
                         ))}
                     </tbody>
                 </table>
