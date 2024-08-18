@@ -66,7 +66,7 @@ function TableCreate() {
                 <button
                     type="button"
                     className="btn btn-secondary mr-3"
-                    onClick={() => history.goBack()}
+                    onClick={() => history.push("/dashboard")}
                 >
                     Cancel
                 </button>
