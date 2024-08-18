@@ -29,7 +29,7 @@ function ReservationSearch() {
 
             <form className="form-group mb-3" onSubmit={handleSubmit}>
                 <input
-                    type="search"
+                    type="text"
                     name="mobile_number"
                     className="form-control rounded mb-2"
                     placeholder="Enter a customer's phone number"
@@ -46,14 +46,14 @@ function ReservationSearch() {
                 <h3 className="mb-3"> Matching Reservations </h3>
                 <table className="table table-striped">
                     <thead>
-                        <th scope="col"> Reservation ID </th>
-                        <th scope="col"> First Name </th>
-                        <th scope="col"> Last Name </th>
-                        <th scope="col"> Party Size </th>
-                        <th scope="col"> Phone Number </th>
-                        <th scope="col"> Reservation Date </th>
-                        <th scope="col"> Reservation Time </th>
-                        <th scope="col"> Reservation Status </th>
+                            <th scope="col"> Reservation ID </th>
+                            <th scope="col"> First Name </th>
+                            <th scope="col"> Last Name </th>
+                            <th scope="col"> Party Size </th>
+                            <th scope="col"> Phone Number </th>
+                            <th scope="col"> Reservation Date </th>
+                            <th scope="col"> Reservation Time </th>
+                            <th scope="col"> Reservation Status </th>
                     </thead>
                     <tbody>
                         {reservations.map((reservation) => (
