@@ -8,7 +8,7 @@ function ReservationSearch() {
     const [mobile_number, setMobile_number] = useState("");
     const [reservations, setReservations] = useState(null);
     const history = useHistory();
-    const [error, setError] = useState("No reservations found");
+    const [error, setError] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,7 +57,7 @@ function ReservationSearch() {
                     </thead>
                     <tbody>
                         {reservations.map((reservation) => (
-                            <ReservationDetail res={reservation} />
+                            <ReservationDetail reservation={reservation} key={reservation.reservation_id} />
                         ))}
                     </tbody>
                 </table>
