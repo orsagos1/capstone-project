@@ -26,6 +26,14 @@ function ReservationDetail({reservation}) {
         }
     }
 
+    if (!reservation) {
+        return (
+            <div>
+                <p>No reservation details available.</p>
+            </div>
+        );
+    }
+
     return (
         <>
             <ErrorAlert error={error} />
