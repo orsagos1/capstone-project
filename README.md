@@ -56,5 +56,5 @@ API Routes
 ---------------------------------------------------------------------------------
 
 | Method | Route | Function |
-| ______ | _____ | ________ |
+| --- | --- | --- |
 | GET    | /reservations | Gets the complete list of reservations, sorted by `reservation_date` and `reservation_time`. |
