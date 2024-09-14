@@ -1,7 +1,8 @@
-Period Tables Restaurant Reservation
+**Period Tables Restaurant Reservation**
+---------------------------------------------------------------------------------
 
 Installation:
-
+---------------------------------------------------------------------------------
 1. Clone this repository to a local directory.
 2. Run cp ./back-end/.env.sample ./back-end/.env.
 3. Update the ./back-end/.env file with the connection URLs to your PostgreSQL database instances.
@@ -12,7 +13,7 @@ Installation:
 
 
 Usage
-
+---------------------------------------------------------------------------------
 A full-stack reservation system designed to simplify the management of a restaurant's daily resservations. Using Periodic Tables allows restaurant employees to:
 
 - Create and Edit new reservations for customers
@@ -24,14 +25,14 @@ A full-stack reservation system designed to simplify the management of a restaur
 
 
 Tech Stack
-
+---------------------------------------------------------------------------------
 - Node.js: server environment for backend execution
 - Express: web app framework for developing the API
 - React: UI logic and rendering
 - PostgreSQL: SQL database for application data
 
 Application Previews
-
+---------------------------------------------------------------------------------
 Dashboard
 ![Screenshot 2024-08-19 at 4 35 02 PM](https://github.com/user-attachments/assets/9a89f4c6-602a-4034-b589-8af96adb3d3f)
 
@@ -52,15 +53,7 @@ Seat the Current Reservation
 
 
 API Routes
-
-Method	Route	Function
-GET	/reservations	Gets the complete list of reservations, sorted by reservation_date and reservation_time.
-GET	/reservations?date=YYYY-MM-DD	Gets all reservations made for the specified date, sorted by reservation_time.
-POST	/reservations	Validates the posted reservation, adding it to the database if validations pass.
-GET	/reservations/:reservationId	Gets the reservation with the specified ID, assuming such a reservation exists in the database.
-PUT	/reservations/:reservationId	Validates the updated reservation information, updating the reservation with the specified ID using the sent data if validations pass.
-PUT	/reservations/:reservationId/status	Updates the status of the reservation with the specified ID according to the status parameter inside of the request body data.
-GET	/tables	Gets the complete list of tables.
-POST	/tables	Validates the posted table, adding it to the database if validations pass.
-PUT	/tables/:tableId/seat	Seats the specified table using the reservation specified in the request body data. Updates the reservation's entry to a status of seated and the table's entry to the reservation_id of the given reservation.
-DELETE	/tables/:tableId/seat	Finishes the specified table. Updates the table's reservation_id to null and the associated reservation's status to finished.
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+| Method | Route | Function |
+| ______ | _____ | ________ |
