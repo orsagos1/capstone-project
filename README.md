@@ -57,13 +57,13 @@ API Routes
 
 | Method | Route | Function |
 | --- | --- | --- |
-| GET    | /reservations | Gets the complete list of reservations, sorted by `reservation_date` and `reservation_time`. |
-| GET | /reservations?date=YYYY-MM-DD | Gets all reservations made or the specified date, sorted by `reservation_time`. |
-| POST | /reservations | Validates the posted reservation, adding it to the database if validations pass. |
-| GET | /reservations/:reservationId | Gets the reservation with the specified ID, assuming such a reservation exists in the database. |
-| PUT | /reservations/:reservationId | Validates the updated reservation information, updating the reservation with the specified ID using the sent data if validations pass. |
-| PUT | /reservations/:resrvationId/status | Updates the status of the reservation with the specified ID according to the `status` parameter inside of the requirest body data. |
-| GET | /tables | Gets the complete list of tables. |
-| POST | /tables | Validates the posted table, adding it to the database if validations pass. |
-| PUT | /tables/:tableId/seat | Seats the specified table using the reservation specified in the request body data. Updates the reservation's entry to a status of `seated` and the table's entry to the reservation_id of the given reservation. |
-| DELETE | /tables/:tableId/seat | Finishes the specified table. Updates the table's reservation_id to `null` and the associated reservation's status to `finished`. |
+| `GET`    | `/reservations` | Gets the complete list of reservations, sorted by `reservation_date` and `reservation_time`. |
+| `GET` | `/reservations?date=YYYY-MM-DD` | Gets all reservations made or the specified date, sorted by `reservation_time`. |
+| `POST` | `/reservations` | Validates the posted reservation, adding it to the database if validations pass. |
+| `GET` | `/reservations/:reservationId` | Gets the reservation with the specified ID, assuming such a reservation exists in the database. |
+| `PUT` | `/reservations/:reservationId` | Validates the updated reservation information, updating the reservation with the specified ID using the sent data if validations pass. |
+| `PUT` | `/reservations/:resrvationId/status` | Updates the status of the reservation with the specified ID according to the `status` parameter inside of the requirest body data. |
+| `GET` | `/tables` | Gets the complete list of tables. |
+| `POST` | `/tables` | Validates the posted table, adding it to the database if validations pass. |
+| `PUT` | `/tables/:tableId/seat` | Seats the specified table using the reservation specified in the request body data. Updates the reservation's entry to a status of `seated` and the table's entry to the reservation_id of the given reservation. |
+| `DELETE` | `/tables/:tableId/seat` | Finishes the specified table. Updates the table's reservation_id to `null` and the associated reservation's status to `finished`. |
